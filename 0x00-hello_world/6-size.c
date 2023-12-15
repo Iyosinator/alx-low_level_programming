@@ -6,7 +6,8 @@
  * Return: Always 0 (Success)
  */
 
-int main(void) {
+int main(void) 
+{
   char my_char;
   int my_int;
   long my_long;
