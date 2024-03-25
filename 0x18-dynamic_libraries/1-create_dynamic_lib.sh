@@ -1,4 +1,12 @@
 #!/bin/bash
-gcc -Wall -Wextra -Werror -pedantic -c -fPIC *.c
+
+# Compile all .c files into object files with position-independent code (-fPIC)
+for file in *.c; do
+    gcc -c -fPIC $file
+done
+
+# Create the dynamic library from the object files
 gcc -shared -o liball.so *.o
-export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+# Remove the object files (optional)
+rm *.o
